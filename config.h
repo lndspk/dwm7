@@ -9,15 +9,15 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=12" };
 static const char dmenufont[]       = "monospace:size=11";
 //background color
-static const char col_gray1[]       = "#2b252b"; // dark purple
+static const char col_gray1[]       = "#12418c"; // light blue
 //inactive window border color
-static const char col_gray2[]       = "#444444";
+static const char col_gray2[]       = "#00589c"; // light dark blue
 //font color
 static const char col_gray3[]       = "#bbbbbb";
 //current tag and current window font color
 static const char col_gray4[]       = "#eeeeee";
 //top bar second color (blue) and active window border color
-static const char col_cyan[]        = "#320077"; //purple
+static const char col_cyan[]        = "#162f57"; // darker blue
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -90,6 +90,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
